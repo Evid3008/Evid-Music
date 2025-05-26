@@ -1,0 +1,62 @@
+{
+  "name": "Evidzone",
+  "description": "An advanced, powerful & multi-featured vc streaming bot for telegram.",
+  "keywords": [
+    "musicbot",
+    "vcbot",
+    "musicplayer"
+  ],
+  "repository": "https://github.com/Evid3008/E-music-bot",
+  "logo": "https://envs.sh/9oZ.jpg",
+  "stack": "container",
+  "env": {
+    "API_ID": {
+      "description": "Get it from my.telegram.org",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Get it from my.telegram.org",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Get it from botfather.",
+      "required": true
+    },
+    "STRING_SESSION": {
+      "description": "Generate pyrogram v2 string session and paste here.",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Provide an user_id to control bot as owner.",
+      "required": true
+    },
+    "LOG_GROUP_ID": {
+      "description": "Provide an chat_id for logs.",
+      "required": true
+    },
+    "MONGO_DB_URL": {
+      "description": "Paste here your mongodb url.",
+      "required": true
+    },
+    "START_IMAGE_URL": {
+      "description": "An image url for your bot.",
+      "value": "https://graph.org/file/918101d0ad6b1207e6201.png",
+      "required": true
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  },
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg.git"
+    },
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
