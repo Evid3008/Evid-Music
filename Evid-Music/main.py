@@ -1,5 +1,6 @@
 import asyncio
 import os
+import sys
 from .config import bot, app, call, adb_cli, LOG_GROUP_ID, logs
 from pyrogram import idle
 
@@ -15,7 +16,7 @@ async def main():
         if file.endswith(".session-journal"):
             os.remove(file)
     try:
-       await adb_cli.admin.command('ping')
+        await adb_cli.admin.command('ping')
     except Exception:
         logs.info("⚠️ 'MONGO_DB_URL' - Not Valid !!")
         sys.exit()
@@ -54,7 +55,7 @@ async def main():
     try:
         await call.start()
     except Exception as e:
-        logs.info(f"🚫 Failed to start PyTgCalls❗\n� ascendants in `main.py` are relative imports (e.g., `from .config import ...`).
+        logs.info(f"🚫 Failed to start PyTgCalls❗\n⚠️ Reason: {e}")
         sys.exit()
     await idle()
 
